@@ -1,0 +1,49 @@
+{
+    "position": "top",
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "battery"
+    ],
+
+    "clock": {
+        "interval": 60,
+        "format": "{:%A %H:%M}"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "󰊗 {ipaddr}",
+        "format-disconnected": "",
+        "on-click": "nmgui",
+        "on-click-right": "nm-connection-editor",
+        "on-scroll-up": "nmcli radio wifi on",
+        "on-scroll-down": "nmcli radio wifi off"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "on-click": "blueman-manager"
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}"
+    }
+}
