@@ -9,8 +9,8 @@
 This setup is my daily driver for school and development. It focuses on a clean aesthetic that stays out of the way while providing all the tools needed for a modern Linux workflow.
 Heavily inspired by [this rice](https://github.com/genta-bahana-nagari/hyprland-rice)
 
-## 🛠️ The Toolkit
-These are the core components that make the system tick.
+## 🛠️ Pre reqs
+These are the prerequisites needed to run this rice:
 
 | Category | Component |
 | :--- | :--- |
