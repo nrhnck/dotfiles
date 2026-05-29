@@ -4,9 +4,16 @@
 ## Pre reqs:
 #### - kitty
 #### - firefox
+#### - nmgui
 #### - thunar
 #### - waypaper
 #### - hyprland
 #### - waybar
 #### - oh my zsh
+#### - wlogout
+#### - fuzzel
+#### - snappy-switcher
+#### - swaync
+#### - slurp
+#### - grim
 #### most likely am forgeting some
