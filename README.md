@@ -25,10 +25,10 @@ These are the prerequisites needed to run this rice:
 | **Screenshots** | [grim](https://github.com/emersion/grim)| + [slurp](https://github.com/emersion/slurp)|
 
 ### ➕ Additional Dependencies
-* **Networking:** `nm-connection-editor` (nmgui)
-* **Logout Menu:** `wlogout`
-* **Audio/Bluetooth:** `snappy-switcher`
-* **Shell:** `oh-my-zsh`
+* **Networking:** [nmgui](https://github.com/s-adi-dev/nmgui)|
+* **Logout Menu:** [wlogout](https://github.com/ArtsyMacaw/wlogout)|
+* **Alt/Tab menu:** [snappy-switcher](https://github.com/OpalAayan/snappy-switcher)|
+* **Shell:** [oh-my-zsh](https://ohmyz.sh/#install)|
 
 ---
 
