@@ -2,6 +2,9 @@
 > A highly productive Arch Linux + Hyprland environment tailored for deep work, study sessions, and seamless multitasking.
 
 <img width="1919" height="1079" alt="HYPRLAND" src="https://github.com/user-attachments/assets/023396fb-e5b1-4f8e-9bdb-3275cda4c290" />
+# Fastfetch
+<img width="1919" height="1076" alt="screenshot_1780068554" src="https://github.com/user-attachments/assets/7bf26ffd-b40b-4a1a-8567-44ffa036a225" />
+<img width="1627" height="750" alt="screenshot_1780063402" src="https://github.com/user-attachments/assets/829c420a-69ce-47b2-883b-47bc956db3d6" />
 
 ---
 
