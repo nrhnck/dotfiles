@@ -15,7 +15,7 @@ These are the prerequisites needed to run this rice:
 | Category | Component |
 | :--- | :--- |
 | **Window Manager** | [Hyprland](https://hyprland.org/) |
-| **Terminal** | `kitty` |
+| **Terminal** | [kitty](https://sw.kovidgoyal.net/kitty/) |
 | **Browser** | `firefox` |
 | **File Manager** | `thunar` |
 | **App Launcher** | `fuzzel` |
