@@ -1,4 +1,4 @@
-# ❄️ Dotfiles: The Student Setup
+# nrhnck's dotfiles
 > A productive Arch linux hyprland laptop confighuration
 
 <img width="1919" height="1079" alt="HYPRLAND" src="https://github.com/user-attachments/assets/023396fb-e5b1-4f8e-9bdb-3275cda4c290" />
@@ -40,7 +40,7 @@ These are the prerequisites needed to run this rice:
 Ensure you are on **Arch Linux** and have a helper like `yay` or `paru` installed to grab any missing AUR packages.
 
 ### 2. Installation
-*Note: It is always recommended to back up your existing configs before overwriting.*
+BACK UP YOUR CONFIG!
 
 ```bash
 # Clone the repository
