@@ -9,7 +9,7 @@
 
 ## 📖 Overview
 This setup is my daily driver for school and development. It focuses on a clean aesthetic that stays out of the way while providing all the tools needed for a modern Linux workflow.
-Heavily inspired by [this rice](https://github.com/genta-bahana-nagari/hyprland-rice)
+Heavily inspired by [this rice](https://github.com/genta-bahana-nagari/hyprland-rice) Please note, this was designed for running on an old laptop, so the animations and decorations are not super flashy, you can always update everything to your liking. This srtup should work well ond desktops too.
 I tried to keep it minimal and aesthetic at the same time. Hope you enjoy it :)
 
 ## 🛠️ Pre reqs
