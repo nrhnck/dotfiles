@@ -1,5 +1,5 @@
 # dotfiles
-# Pre reqs:
+## Pre reqs:
 # - kitty
 # - firefox
 # - thunar
