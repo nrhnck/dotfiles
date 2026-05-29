@@ -16,13 +16,13 @@ These are the prerequisites needed to run this rice:
 | :--- | :--- |
 | **Window Manager** | [Hyprland](https://hyprland.org/) |
 | **Terminal** | [kitty](https://sw.kovidgoyal.net/kitty/) |
-| **Browser** | `firefox` |
-| **File Manager** | `thunar` |
-| **App Launcher** | `fuzzel` |
-| **Status Bar** | `waybar` |
-| **Wallpaper** | `waypaper` |
-| **Notifications** | `swaync` |
-| **Screenshots** | `grim` + `slurp` |
+| **Browser** | [firefox](https://www.firefox.com/en-US/) |
+| **File Manager** | [thunar](https://wiki.archlinux.org/title/Thunar) |
+| **App Launcher** | [fuzzel](https://codeberg.org/dnkl/fuzzel) |
+| **Status Bar** | [waybar](https://github.com/alexays/waybar) |
+| **Wallpaper** | [waypaper](https://github.com/anufrievroman/waypaper) |
+| **Notifications** | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
+| **Screenshots** | [grim](https://github.com/emersion/grim)| + [slurp](https://github.com/emersion/slurp)|
 
 ### ➕ Additional Dependencies
 * **Networking:** `nm-connection-editor` (nmgui)
