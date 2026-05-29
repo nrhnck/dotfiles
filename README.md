@@ -45,7 +45,7 @@ BACK UP YOUR CONFIG!
 
 ```bash
 # Clone the repository
-git clone [https://github.com/YOUR_USERNAME/dotfiles.git](https://github.com/YOUR_USERNAME/dotfiles.git)
+git clone [https://github.com/nrhnck/dotfiles.git](https://github.com/nrhnck/dotfiles.git)
 cd dotfiles
 
 # Example: Symlinking a config (Adjust based on your folder structure)
