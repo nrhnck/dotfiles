@@ -1,0 +1,25 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: @bg;
+    color: @text;
+}
+
+#workspaces button {
+    background: @surface1;
+    color: @text;
+}
+
+#workspaces button.active {
+    background: @accent;
+    color: @text;
+}
+
+#clock, #pulseaudio, #network {
+    background: @surface2;
+    padding: 4px 10px;
+    border-radius: 8px;
+}

@@ -1,49 +1,104 @@
 {
-    "position": "top",
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "pulseaudio",
-        "network",
-        "bluetooth",
-        "battery"
-    ],
+  "spacing": 16,
+  "margin-top": 5,
 
-    "clock": {
-        "interval": 60,
-        "format": "{:%A %H:%M}"
+  "modules-left": [
+    "custom/updatetoggler"
+  ],
+
+  "modules-center": [
+    "hyprland/workspaces",
+    "clock",
+    "tray",
+    "pulseaudio",
+    "network",
+    "battery"
+  ],
+
+  "modules-right": [
+    "custom/notifications"
+  ],
+
+  "custom/updatetoggler": {
+    "format": "󰣇",
+    "tooltip": false,
+    "on-click": "kitty bash -c 'sudo pacman -Syyu; exec bash'"
+  },
+
+  "clock": {
+    "interval": 60,
+    "format": "{:%H:%M}",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "sort-by-number": true,
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": {
+      "*": 5
     },
+    "format": "{icon}"
+  },
 
-    "hyprland/workspaces": {
-        "format": "{name}",
-        "on-click": "activate"
+  "tray": {
+    "icon-size": 14,
+    "spacing": 4
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-bluetooth": "{volume}% {icon} ",
+    "format-icons": {
+      "default": ["", ""],
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "phone-muted": "",
+      "portable": "",
+      "car": ""
     },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"]
+  },
 
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "on-click": "pavucontrol"
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "No WiFi 󰤭",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 40,
+    "on-click": "~/.config/hypr/scripts/wifi-mananger.sh"
+  },
+
+  "battery": {
+    "states": {
+      "middle": 40,
+      "warning": 20,
+      "critical": 10
     },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󱐋",
+    "format-plugged": "{capacity}% ",
+    "format-icons": ["", "", "", "", ""]
+  },
 
-    "network": {
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": "󰊗 {ipaddr}",
-        "format-disconnected": "",
-        "on-click": "nmgui",
-        "on-click-right": "nm-connection-editor",
-        "on-scroll-up": "nmcli radio wifi on",
-        "on-scroll-down": "nmcli radio wifi off"
-    },
-
-    "bluetooth": {
-        "format": "",
-        "on-click": "blueman-manager"
-    },
-
-    "battery": {
-        "format": "{capacity}% {icon}"
-    }
+  "custom/notifications": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "swaync-client -t"
+  }
 }
