@@ -14,21 +14,21 @@ These are the prerequisites needed to run this rice:
 
 | Category | Component |
 | :--- | :--- |
-| **Window Manager** | [Hyprland](https://hyprland.org/) |
-| **Terminal** | [kitty](https://sw.kovidgoyal.net/kitty/) |
-| **Browser** | [firefox](https://www.firefox.com/en-US/) |
-| **File Manager** | [thunar](https://wiki.archlinux.org/title/Thunar) |
-| **App Launcher** | [fuzzel](https://codeberg.org/dnkl/fuzzel) |
-| **Status Bar** | [waybar](https://github.com/alexays/waybar) |
-| **Wallpaper** | [waypaper](https://github.com/anufrievroman/waypaper) |
-| **Notifications** | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
-| **Screenshots** | [grim](https://github.com/emersion/grim)| + [slurp](https://github.com/emersion/slurp)|
+| **window manager** | [Hyprland](https://hyprland.org/) |
+| **terminal** | [kitty](https://sw.kovidgoyal.net/kitty/) |
+| **browser** | [firefox](https://www.firefox.com/en-US/) |
+| **file manager** | [thunar](https://wiki.archlinux.org/title/Thunar) |
+| **app launcher** | [fuzzel](https://codeberg.org/dnkl/fuzzel) |
+| **status bar** | [waybar](https://github.com/alexays/waybar) |
+| **wallpaper** | [waypaper](https://github.com/anufrievroman/waypaper) |
+| **notifications** | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
+| **screenshots** | [grim](https://github.com/emersion/grim)| + [slurp](https://github.com/emersion/slurp)|
 
 ### ➕ Additional Dependencies
-* **Networking:** [nmgui](https://github.com/s-adi-dev/nmgui)|
-* **Logout Menu:** [wlogout](https://github.com/ArtsyMacaw/wlogout)|
-* **Alt/Tab menu:** [snappy-switcher](https://github.com/OpalAayan/snappy-switcher)|
-* **Shell:** [oh-my-zsh](https://ohmyz.sh/#install)|
+* **network gui:** [nmgui](https://github.com/s-adi-dev/nmgui)
+* **logout menu:** [wlogout](https://github.com/ArtsyMacaw/wlogout)
+* **Alt/Tab menu:** [snappy-switcher](https://github.com/OpalAayan/snappy-switcher)
+* **shell:** [oh-my-zsh](https://ohmyz.sh/#install)
 
 ---
 
