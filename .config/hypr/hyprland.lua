@@ -74,6 +74,10 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
 -- Super + A to quickly open your actual todo.org file for editing
 hl.bind("SUPER + A", hl.dsp.exec_cmd([[emacsclient -c ~/notes/org/todo.org]]))
 
+-- Toggle your monochrome todo widget with Super + N
+hl.bind("SUPER + N", function()
+    hl.exec_cmd("~/.config/conky/start-desktop.sh")
+end)
 
 -- Monitor Config
 hl.monitor({
@@ -202,4 +206,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waypaper --restore")
     hl.exec_cmd("swaync")
     hl.exec_cmd("xsettingsd")
+hl.exec_once("/home/nrhnck/.config/conky/start-desktop.sh --auto")
 end)
