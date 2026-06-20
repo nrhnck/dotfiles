@@ -1,0 +1,65 @@
+/* Remove the main bar background completely */
+window#waybar {
+    background-color: transparent;
+    color: #e2e8f0;
+    font-family: "JetBrainsMono Nerd Font", "Cascadia Code", monospace;
+    font-size: 14px;
+}
+
+/* Left Notification Module Pill - Dedicated capsule on the far left */
+.modules-left {
+    background-color: rgba(30, 30, 30, 0.6);
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 15px;
+}
+
+#custom-notification {
+    color: #e2e8f0;
+}
+
+/* Center Workspaces Pill */
+#workspaces {
+    background-color: rgba(30, 30, 30, 0.6); 
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 15px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: rgba(255, 255, 255, 0.4); 
+    background-color: transparent;
+    font-weight: bold;
+}
+
+/* Active Workspace (Green highlight) */
+#workspaces button.active {
+    color: #52b788; 
+}
+
+/* Right Side Modules Pill */
+.modules-right {
+    background-color: rgba(30, 30, 30, 0.6); 
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-right: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 15px;
+}
+
+/* Internal padding for individual items inside the right pill */
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#clock {
+    padding: 0 8px;
+    color: #e2e8f0;
+}

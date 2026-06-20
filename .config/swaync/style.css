@@ -1,0 +1,65 @@
+@define-color bg-color #000000;
+@define-color text-color #e2e8f0;
+@define-color accent-color #52b788; 
+
+/* The Main Control Center Window */
+.control-center {
+  background: @bg-color;
+  color: @text-color;
+  border-radius: 15px;
+  padding: 12px;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border so it doesn't blend into dark wallpapers */
+}
+
+/* Control Center Header Title */
+.widget-title {
+  color: @text-color;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.widget-title button {
+  background: transparent;
+  color: @accent-color;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* Do Not Disturb Widget */
+.widget-dnd {
+  color: @text-color;
+  padding: 4px;
+  margin-bottom: 8px;
+}
+
+.widget-dnd switch {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.widget-dnd switch:checked {
+  background: @accent-color;
+}
+
+/* Notification Container Cards - Solid dark grey for maximum contrast */
+.notification {
+  background: #1e1e1e; 
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border to define the card shape */
+  border-radius: 10px;
+  margin: 6px 0;
+  padding: 10px;
+}
+.notification-content {
+  color: @text-color;
+}
+
+.notification-default-action:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Mute Critical/Low indicators */
+.critical {
+  border-left: 3px solid #ff6b6b;
+}

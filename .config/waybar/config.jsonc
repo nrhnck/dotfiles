@@ -1,0 +1,41 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "exclusive": true,
+    "passthrough": false,
+    "modules-left": ["custom/notification"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["network", "pulseaudio", "backlight", "battery", "clock"],
+    "custom/notification": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 4
+        }
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-disconnected": "󰖪 "
+    },
+    "pulseaudio": {
+        "format": "  {volume}%"
+    },
+    "backlight": {
+        "format": "  {percent}%"
+    },
+    "battery": {
+        "format": "  {capacity}%"
+    },
+    "clock": {
+        "format": "  {:%a %b %d    %H:%M}"
+    }
+}
