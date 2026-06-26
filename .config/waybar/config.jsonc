@@ -1,41 +1,111 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 40,
-    "exclusive": true,
-    "passthrough": false,
-    "modules-left": ["custom/notification"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["network", "pulseaudio", "backlight", "battery", "clock"],
-    "custom/notification": {
-        "tooltip": false,
-        "format": "",
-        "on-click": "swaync-client -t -sw",
-        "escape": true
-    },
+    "height": 28,
+    "spacing": 6,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "wireplumber",
+        "mpris"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "battery",
+        "idle_inhibitor",
+        "network",
+        "bluetooth",
+        "custom/notifications"
+    ],
+
     "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{name}",
+        "format": "{id}",
+        "on-click": "activate",
+        "sort-by-number": true,
         "persistent-workspaces": {
-            "*": 4
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
         }
     },
-    "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀  {ifname}",
-        "format-disconnected": "󰖪 "
-    },
-    "pulseaudio": {
-        "format": "  {volume}%"
-    },
-    "backlight": {
-        "format": "  {percent}%"
-    },
-    "battery": {
-        "format": "  {capacity}%"
-    },
+
     "clock": {
-        "format": "  {:%a %b %d    %H:%M}"
+        "format": "{:%d %B %Y | %H:%M:%S}",
+        "interval": 1
+    },
+
+    "wireplumber": {
+        "format": "󰕾 {volume}%",
+        "max-volume": 100,
+        "scroll-step": 5
+    },
+
+    "battery": {
+        "bat": "BAT1",
+        "interval": 60,
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
+    "network": {
+        "format": "",
+        "format-ethernet": "󰈀",
+        "format-wifi": "{icon}",
+        "format-disconnected": "󰖪",
+        "format-icons": [
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨",
+            "󰤨"
+        ],
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/notifications": {
+        "format": "󰂚",
+        "tooltip": false,
+        "exec": "printf '{}'",
+        "interval": "once",
+        "on-click": "swaync-client -t",
+        "on-click-right": "swaync-client -d"
+    },
+
+    "mpris": {
+        "format": " - {title}",
+        "format-paused": " - Paused",
+        "player": "playerctld",
+        "interval": 1,
+        "max-length": 40
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾪"
+        }
     }
 }
