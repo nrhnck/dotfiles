@@ -71,13 +71,8 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("pamixer -t"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +10%"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
 
--- Super + A to quickly open your actual todo.org file for editing
-hl.bind("SUPER + A", hl.dsp.exec_cmd([[emacsclient -c ~/notes/org/todo.org]]))
-
 -- Toggle your monochrome todo widget with Super + N
-hl.bind("SUPER + N", function()
-    hl.exec_cmd("~/.config/conky/start-desktop.sh")
-end)
+hl.bind("SUPER + n", hl.dsp.exec_cmd([[ /home/nrhnck/.config/conky/start-desktop.sh ]]))
 
 -- Monitor Config
 hl.monitor({
@@ -88,7 +83,7 @@ hl.monitor({
 })
 
 -- Cursor
-hl.env("XCURSOR_THEME", "Adawaita")
+hl.env("XCURSOR_THEME", "Adwaita")
 hl.env("XCURSOR_SIZE", 20)
 
 -- Screenshots
@@ -200,11 +195,12 @@ hl.layer_rule({ match = { namespace = "match:namespace swaync-notification-windo
 hl.layer_rule({ match = { namespace = "match:namespace swaync-control-center" }, blur = false })
 hl.layer_rule({ match = { namespace = "match:namespace logout_dialog" }, blur = true })
 
--- Autostart
 hl.on("hyprland.start", function()
-    hl.exec_cmd("snappy-switcher --daemon")
-    hl.exec_cmd("waypaper --restore")
-    hl.exec_cmd("swaync")
-    hl.exec_cmd("xsettingsd")
-hl.exec_once("/home/nrhnck/.config/conky/start-desktop.sh --auto")
+     hl.exec_cmd("waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/style.css")
+     hl.exec_cmd("hypridle")
+     hl.exec_cmd("snappy-switcher --daemon")
+     hl.exec_cmd("waypaper --restore")
+     hl.exec_cmd("swaync")
+     hl.exec_cmd("xsettingsd")
+     hl.exec_cmd("/home/nrhnck/.config/conky/start-desktop.sh --auto")
 end)

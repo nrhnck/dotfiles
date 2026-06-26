@@ -1,65 +1,50 @@
-/* Remove the main bar background completely */
+@define-color foreground #B3B1AD;
+@define-color foreground-inactive #7A7874;
+@define-color background #0A0E14;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
 window#waybar {
-    background-color: transparent;
-    color: #e2e8f0;
-    font-family: "JetBrainsMono Nerd Font", "Cascadia Code", monospace;
-    font-size: 14px;
-}
-
-/* Left Notification Module Pill - Dedicated capsule on the far left */
-.modules-left {
-    background-color: rgba(30, 30, 30, 0.6);
-    margin-top: 6px;
-    margin-bottom: 6px;
-    margin-left: 10px;
-    padding-left: 14px;
-    padding-right: 14px;
-    border-radius: 15px;
-}
-
-#custom-notification {
-    color: #e2e8f0;
-}
-
-/* Center Workspaces Pill */
-#workspaces {
-    background-color: rgba(30, 30, 30, 0.6); 
-    margin-top: 6px;
-    margin-bottom: 6px;
-    padding-left: 14px;
-    padding-right: 14px;
-    border-radius: 15px;
+    background: @background;
+    color: @foreground;
+    min-height: 30px;
 }
 
 #workspaces button {
-    padding: 0 8px;
-    color: rgba(255, 255, 255, 0.4); 
-    background-color: transparent;
-    font-weight: bold;
+    color: @foreground-inactive;
+    padding: 0 0.45em;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-/* Active Workspace (Green highlight) */
 #workspaces button.active {
-    color: #52b788; 
+    color: @foreground;
 }
 
-/* Right Side Modules Pill */
-.modules-right {
-    background-color: rgba(30, 30, 30, 0.6); 
-    margin-top: 6px;
-    margin-bottom: 6px;
-    margin-right: 10px;
-    padding-left: 14px;
-    padding-right: 14px;
-    border-radius: 15px;
+#workspaces button:hover {
+    color: @foreground;
+    background: transparent;
 }
 
-/* Internal padding for individual items inside the right pill */
-#network,
-#pulseaudio,
-#backlight,
-#battery,
+#wireplumber {
+    padding-left: 1em;
+}
+
 #clock {
-    padding: 0 8px;
-    color: #e2e8f0;
+    color: #FFB454;
+}
+
+#battery,
+#idle_inhibitor,
+#network,
+#bluetooth,
+#tray,
+#mpris {
+    padding-right: 1em;
 }
