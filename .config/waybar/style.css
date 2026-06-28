@@ -16,6 +16,8 @@ window#waybar {
     min-height: 28px;
 }
 
+/* ---------------- Workspaces ---------------- */
+
 #workspaces button {
     color: @foreground-inactive;
     background: transparent;
@@ -34,28 +36,59 @@ window#waybar {
     background: transparent;
 }
 
+/* ---------------- Clock ---------------- */
+
 #clock {
     color: @accent;
     padding: 0 1em;
 }
 
-#wireplumber {
+/* ---------------- Audio ---------------- */
+
+#pulseaudio {
     padding-left: 1em;
 }
+
+/* ---------------- Right Modules ---------------- */
 
 #battery,
 #idle_inhibitor,
 #network,
 #bluetooth,
 #custom-notifications,
-#tray,
-#mpris {
+#mpris,
+#tray {
     padding-right: 1em;
 }
 
-#tray {
-    padding-right: 0.75em;
+/* ---------------- Battery Colors ---------------- */
+
+#battery {
+    color: @foreground;
 }
+
+/* Charging = Green */
+#battery.charging,
+#battery.plugged {
+    color: #AAD94C;
+}
+
+/* Low = Yellow */
+#battery.warning {
+    color: #FFB454;
+}
+
+/* Critical = Red */
+#battery.critical {
+    color: #F07178;
+}
+
+/* Full = Green */
+#battery.full {
+    color: #AAD94C;
+}
+
+/* ---------------- Tooltips ---------------- */
 
 tooltip {
     background: @background;
