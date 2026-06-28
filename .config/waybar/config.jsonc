@@ -6,7 +6,7 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "wireplumber",
+        "pulseaudio",
         "mpris"
     ],
 
@@ -40,23 +40,41 @@
         "interval": 1
     },
 
-    "wireplumber": {
+    "pulseaudio": {
         "format": "󰕾 {volume}%",
+        "format-muted": "󰖁 Muted",
         "max-volume": 100,
-        "scroll-step": 5
+        "scroll-step": 5,
+        "on-click": "pavucontrol"
     },
 
     "battery": {
-        "bat": "BAT1",
-        "interval": 60,
+        "bat": "BAT0",
+        "adapter": "AC",
+        "interval": 10,
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 15
+        },
         "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": "󰁹 100%",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "tooltip-format": "{capacity}%\n{timeTo}\n{power:.1f}W"
     },
 
     "network": {
