@@ -43,20 +43,22 @@ window#waybar {
     padding: 0 1em;
 }
 
-/* ---------------- Audio ---------------- */
+/* ---------------- Left Modules Padding ---------------- */
 
-#pulseaudio {
+#custom-weather {
     padding-left: 1em;
+    padding-right: 1em;
+    color: #39BAE6; /* Clean Ayu sky blue color */
 }
 
-/* ---------------- Right Modules ---------------- */
+/* ---------------- Right Modules Padding ---------------- */
 
+#pulseaudio,
 #battery,
 #idle_inhibitor,
 #network,
 #bluetooth,
 #custom-notifications,
-#mpris,
 #tray {
     padding-right: 1em;
 }
@@ -67,23 +69,19 @@ window#waybar {
     color: @foreground;
 }
 
-/* Charging = Green */
 #battery.charging,
 #battery.plugged {
     color: #AAD94C;
 }
 
-/* Low = Yellow */
 #battery.warning {
     color: #FFB454;
 }
 
-/* Critical = Red */
 #battery.critical {
     color: #F07178;
 }
 
-/* Full = Green */
 #battery.full {
     color: #AAD94C;
 }
