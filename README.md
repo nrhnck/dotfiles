@@ -8,5 +8,7 @@ conky widget showing emacs org mode to do
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/92b44ee1-175b-4d1a-bc41-af3e52597cec" />
 
 fastfetch 
+
 <img width="488" height="85" alt="image" src="https://github.com/user-attachments/assets/6efff2d6-dedd-4fdf-9e1f-91dad9a07146" />
+
 discord block during focused periods
