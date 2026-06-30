@@ -1,0 +1,11 @@
+#!/usr/bin/env fish
+
+set hour (date +%H)
+
+# Block from 8:00 AM to 11:59 AM
+if test $hour -ge 8 -a $hour -lt 12
+    notify-send "󰈸 Focus Mode" "Discord is locked until 12:00 PM."
+    exit 1
+end
+
+exec discord
