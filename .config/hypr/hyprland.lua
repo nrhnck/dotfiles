@@ -71,13 +71,8 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("pamixer -t"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +10%"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
 
--- Super + A to quickly open your actual todo.org file for editing
-hl.bind("SUPER + A", hl.dsp.exec_cmd([[emacsclient -c ~/notes/org/todo.org]]))
-
 -- Toggle your monochrome todo widget with Super + N
-hl.bind("SUPER + N", function()
-    hl.exec_cmd("~/.config/conky/start-desktop.sh")
-end)
+hl.bind("SUPER + n", hl.dsp.exec_cmd([[ /home/nrhnck/.config/conky/start-desktop.sh ]]))
 
 -- Monitor Config
 hl.monitor({
@@ -88,12 +83,21 @@ hl.monitor({
 })
 
 -- Cursor
-hl.env("XCURSOR_THEME", "Adawaita")
+hl.env("XCURSOR_THEME", "Adwaita")
 hl.env("XCURSOR_SIZE", 20)
 
+
 -- Screenshots
-hl.bind("Print", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | wl-copy]]))
-hl.bind(mainMod .. " + " .. "F12", hl.dsp.exec_cmd("bash -c 'grim -g $(slurp) ~/Pictures/screenshot_$(date +%s).png'"))
+hl.bind(
+    "Print",
+    hl.dsp.exec_cmd([[bash -c 'mkdir -p ~/Pictures/Screenshots && FILE=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && grim -g "$(slurp)" "$FILE" && wl-copy < "$FILE" && notify-send "Screenshot Saved" "$FILE"' ]])
+)
+
+hl.bind(
+    "SUPER + Print",
+    hl.dsp.exec_cmd([[bash -c 'mkdir -p ~/Pictures/Screenshots && FILE=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && grim "$FILE" && wl-copy < "$FILE" && notify-send "Screenshot Saved" "$FILE"' ]])
+)
+
 
 -- Core Hyprland Configuration Block
 hl.config({
@@ -142,34 +146,16 @@ hl.config({
      },
 })
 
--- Animation Curves
-hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
-hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
-hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
-hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
-hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("instant_snap", {
+    type = "bezier",
+    points = { {0.1, 1.0}, {0.1, 1.0} }
+})
 
--- Animation Configs
-hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 87%" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
-hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
-hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
+hl.animation({ leaf = "windows", enabled = true, speed = 1, bezier = "instant_snap", style = "popin 95%" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "instant_snap", style = "slide" })
+hl.animation({ leaf = "fade", enabled = true, speed = 1, bezier = "instant_snap" })
+hl.animation({ leaf = "layers", enabled = true, speed = 1, bezier = "instant_snap", style = "fade" })
 
--- Window Rules
 hl.window_rule({
     name = "suppress-maximize-events",
     match = { class = ".*" },
@@ -200,11 +186,12 @@ hl.layer_rule({ match = { namespace = "match:namespace swaync-notification-windo
 hl.layer_rule({ match = { namespace = "match:namespace swaync-control-center" }, blur = false })
 hl.layer_rule({ match = { namespace = "match:namespace logout_dialog" }, blur = true })
 
--- Autostart
 hl.on("hyprland.start", function()
-    hl.exec_cmd("snappy-switcher --daemon")
-    hl.exec_cmd("waypaper --restore")
-    hl.exec_cmd("swaync")
-    hl.exec_cmd("xsettingsd")
-hl.exec_once("/home/nrhnck/.config/conky/start-desktop.sh --auto")
+     hl.exec_cmd("waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/style.css")
+     hl.exec_cmd("hypridle")
+     hl.exec_cmd("snappy-switcher --daemon")
+     hl.exec_cmd("waypaper --restore")
+     hl.exec_cmd("swaync")
+     hl.exec_cmd("xsettingsd")
+     hl.exec_cmd("/home/nrhnck/.config/conky/start-desktop.sh --auto")
 end)
