@@ -6,8 +6,7 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "pulseaudio",
-        "mpris"
+        "custom/weather"
     ],
 
     "modules-center": [
@@ -15,6 +14,7 @@
     ],
 
     "modules-right": [
+        "pulseaudio",
         "battery",
         "idle_inhibitor",
         "network",
@@ -33,6 +33,13 @@
             "4": [],
             "5": []
         }
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh",
+        "interval": 1800
     },
 
     "clock": {
@@ -62,17 +69,7 @@
         "format-plugged": " {capacity}%",
         "format-full": "󰁹 100%",
         "format-icons": [
-            "󰂎",
-            "󰁺",
-            "󰁻",
-            "󰁼",
-            "󰁽",
-            "󰁾",
-            "󰁿",
-            "󰂀",
-            "󰂁",
-            "󰂂",
-            "󰁹"
+            "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
         ],
         "tooltip-format": "{capacity}%\n{timeTo}\n{power:.1f}W"
     },
@@ -83,11 +80,7 @@
         "format-wifi": "{icon}",
         "format-disconnected": "󰖪",
         "format-icons": [
-            "󰤟",
-            "󰤢",
-            "󰤥",
-            "󰤨",
-            "󰤨"
+            "󰤟", "󰤢", "󰤥", "󰤨", "󰤨"
         ],
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname}",
@@ -109,14 +102,6 @@
         "interval": "once",
         "on-click": "swaync-client -t",
         "on-click-right": "swaync-client -d"
-    },
-
-    "mpris": {
-        "format": " - {title}",
-        "format-paused": " - Paused",
-        "player": "playerctld",
-        "interval": 1,
-        "max-length": 40
     },
 
     "idle_inhibitor": {
